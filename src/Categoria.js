@@ -12,7 +12,7 @@ class Categoria extends Component {
     }
     componentDidMount(){
         console.log('did mount')
-        const id = this.props.match.parms.catId;
+        const id = this.props.match.params.catId;
 
         axios
         .get('http://localhost:3001/produtos?categoria='+id)
