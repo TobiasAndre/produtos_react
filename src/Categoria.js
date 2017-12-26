@@ -2,13 +2,16 @@ import React,{ Component } from 'react'
 import axios from 'axios'
 
 class Categoria extends Component {
+    
     constructor(props){
         super(props)
+        console.log('constructor')
         this.state ={
             produtos:[]
         }
     }
     componentDidMount(){
+        console.log('did mount')
         const id = this.props.match.parms.catId;
 
         axios
