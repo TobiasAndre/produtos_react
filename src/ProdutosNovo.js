@@ -20,6 +20,7 @@ class Produtos extends Component {
     }
     render(){
         const { categorias } = this.props
+        console.log(this.props)
         if(this.state.redirect){
             return <Redirect to={this.state.redirect} />
         }

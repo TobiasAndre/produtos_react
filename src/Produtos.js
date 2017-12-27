@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { Route,Link } from 'react-router-dom'
+
 import ProdutosHome from './ProdutosHome'
 import Categoria from './Categoria'
 import ProdutosNovo from './ProdutosNovo'
@@ -34,6 +35,7 @@ class Produtos extends Component {
     }
 
     renderCategoria(cat){
+        console.log(cat)
         return (
             <li key={cat.id}>
                 {this.state.editingCategoria === cat.id &&
@@ -115,8 +117,9 @@ class Produtos extends Component {
                     <Route path={match.url+'/editar/:id'}
                         render={(props)=> {
                             return <ProdutosEditar {...props}
-                                readProduto={1}
-                                editProduto={1}
+                                categorias={categorias}
+                                readProduto={this.props.readProduto}
+                                editProduto={this.props.editProduto}
                                 />
                         }}
                     />
