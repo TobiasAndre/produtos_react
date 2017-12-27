@@ -1,4 +1,5 @@
 import React,{ Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Categoria extends Component {
     
@@ -10,6 +11,7 @@ class Categoria extends Component {
             categoria:{},
             id:null
         }
+        this.renderProduto = this.renderProduto.bind(this)
     }
     loadData(id){
         this.setState({ id })
@@ -18,7 +20,14 @@ class Categoria extends Component {
     }
     renderProduto(produto){
         return (
-            <p className='well' key={produto.id}>{produto.produto}</p>
+            <p className='well' key={produto.id}>
+            {produto.produto}
+            <button onClick={()=> {
+                this.props.removeProduto(produto)
+                    .then(res=> this.loadData(this.props.match.params.catId))
+            }}>Excluir</button>
+            <Link to={'/produtos/editar/'+produto.id}>Editar</Link>
+            </p>
         )
     }
     componentDidMount(){
@@ -33,7 +42,10 @@ class Categoria extends Component {
     render(){
         return (
             <div>
-                <h1>{this.props.categoria.categoria}</h1>
+                {/*<h1>{this.props.categoria.categoria}</h1>*/}
+                {this.props.produtos.length ===0 &&
+                    <p className='alert alert-danger'>Nenhum Produto.</p>
+                }
                 <p>{this.props.produtos.map(this.renderProduto)}</p>
             </div>            
         )

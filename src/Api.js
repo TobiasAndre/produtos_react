@@ -12,6 +12,7 @@ const apis = {
     
     createProduto :(produto)=> api.post('produtos',produto),
     loadProdutos:(categoria)=> api.get('produtos?categoria='+categoria),
+    deleteProduto:(id)=> api.delete('produtos/'+id),
     readCategoria:(id) => api.get('categorias/'+id)
 }
 

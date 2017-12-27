@@ -29,6 +29,11 @@
       "produto": "Novo tipo de carne em alimentos",
       "categoria": "2",
       "id": 6
+    },
+    {
+      "produto": "Novo produto de novo em limpeza",
+      "categoria": "1",
+      "id": 7
     }
   ],
   "categorias": [
@@ -43,6 +48,10 @@
     {
       "categoria": "Utilitarios",
       "id": 3
+    },
+    {
+      "categoria": "Carnes",
+      "id": 4
     }
   ]
 }
