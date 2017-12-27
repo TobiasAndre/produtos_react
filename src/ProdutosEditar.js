@@ -32,11 +32,6 @@ class ProdutosEditar extends Component {
         }
         return (<div>
                 <h2>Editar Produto</h2>
-                {/*<select ref='categoria'>
-                    {categorias
-                        .map((c) => <option key={c.id} value={c.id}>{c.categoria}</option>)}
-                </select>
-                */}
                 <input placeholder='Nome do novo produto'
                     className='form-control'
                     ref='produto'/>
